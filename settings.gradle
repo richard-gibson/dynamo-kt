@@ -1,2 +1,9 @@
 rootProject.name = 'dynamo-kt'
 
+
+include ':tc-test'
+include ':dynamokt-meta-compiler'
+include ':dynamokt-meta'
+include ':dynamokt-core'
+include ':dynamokt-sample'
+include ':arrow-examples'

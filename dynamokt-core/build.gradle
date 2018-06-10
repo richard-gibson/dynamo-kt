@@ -1,0 +1,28 @@
+dependencies {
+    compile project(":dynamokt-meta")
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+    compile "com.amazonaws:aws-java-sdk-dynamodb:$dynamodb_version"
+    compile "io.arrow-kt:arrow-core:$arrowVersion"
+    compile "io.arrow-kt:arrow-syntax:$arrowVersion"
+    compile "io.arrow-kt:arrow-typeclasses:$arrowVersion"
+    compile "io.arrow-kt:arrow-data:$arrowVersion"
+    compile "io.arrow-kt:arrow-instances-core:$arrowVersion"
+    compile "io.arrow-kt:arrow-instances-data:$arrowVersion"
+//    compile "io.arrow-kt:arrow-generic:$arrowVersion"
+    compileOnly project(':dynamokt-meta-compiler')
+
+    kapt "io.arrow-kt:arrow-annotations-processor:$arrowVersion"
+    kapt project(':dynamokt-meta-compiler')
+
+    testCompile "io.arrow-kt:arrow-test:$arrowVersion"
+    kaptTest project(':dynamokt-meta-compiler')
+    kaptTest "io.arrow-kt:arrow-annotations-processor:$arrowVersion"
+    testCompileOnly "io.arrow-kt:arrow-annotations-processor:$arrowVersion"
+
+    testCompileOnly project(':dynamokt-meta-compiler')
+    testCompile "io.kotlintest:kotlintest:$kotlinTestVersion"
+}
+
+//apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+apply from: rootProject.file('gradle/generated-kotlin-sources.gradle')
+apply plugin: 'kotlin-kapt'

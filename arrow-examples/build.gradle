@@ -1,0 +1,20 @@
+dependencies {
+    compile "io.arrow-kt:arrow-data:$arrowVersion"
+    compile "io.arrow-kt:arrow-effects:$arrowVersion"
+    compile "io.arrow-kt:arrow-effects-rx2:$arrowVersion"
+    compile "io.arrow-kt:arrow-effects-kotlinx-coroutines:$arrowVersion"
+    compile "io.arrow-kt:arrow-optics:$arrowVersion"
+
+    kapt "io.arrow-kt:arrow-annotations-processor:$arrowVersion"
+    kaptTest "io.arrow-kt:arrow-annotations-processor:$arrowVersion"
+    compileOnly "io.arrow-kt:arrow-annotations-processor:$arrowVersion"
+    testCompileOnly "io.arrow-kt:arrow-annotations-processor:$arrowVersion"
+
+    testCompile "io.arrow-kt:arrow-test:$arrowVersion"
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion"
+}
+
+apply from: rootProject.file('gradle/generated-kotlin-sources.gradle')
+apply plugin: 'kotlin-kapt'

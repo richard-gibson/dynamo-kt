@@ -1,0 +1,8 @@
+dependencies {
+    compile project(":dynamokt-core")
+
+    kapt "io.arrow-kt:arrow-annotations-processor:$arrowVersion"
+    kapt project(':dynamokt-meta-compiler')
+}
+
+apply plugin: 'kotlin-kapt'
